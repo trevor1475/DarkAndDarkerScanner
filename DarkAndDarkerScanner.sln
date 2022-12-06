@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkAndDarkerScanner", "DarkAndDarkerScanner\DarkAndDarkerScanner.csproj", "{2C987189-5D52-4B32-B85B-7F015DB4C4AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkAndDarkerScannerBackend", "DarkAndDarkerScannerBackend\DarkAndDarkerScannerBackend.csproj", "{414087BF-4722-4B10-AB6B-7A4DCFE8B819}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C987189-5D52-4B32-B85B-7F015DB4C4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C987189-5D52-4B32-B85B-7F015DB4C4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C987189-5D52-4B32-B85B-7F015DB4C4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C987189-5D52-4B32-B85B-7F015DB4C4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414087BF-4722-4B10-AB6B-7A4DCFE8B819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414087BF-4722-4B10-AB6B-7A4DCFE8B819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414087BF-4722-4B10-AB6B-7A4DCFE8B819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414087BF-4722-4B10-AB6B-7A4DCFE8B819}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F18860BB-8D18-44A3-9780-CA5D98FC73CB}
+	EndGlobalSection
+EndGlobal
