@@ -1,4 +1,6 @@
-﻿namespace DarkAndDarkerScannerBackend
+﻿using System.Collections.Generic;
+
+namespace DarkAndDarkerScanner
 {
     internal class Config
     {

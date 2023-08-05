@@ -1,0 +1,21 @@
+﻿{
+  "SelectedClass": "Wizard",
+  "Skills": {
+    "Magic Missles": false,
+    "Fireball": false,
+    "Direct Hit": false,
+    "Splash Damage": false
+  },
+  "Perks": {
+    "Mana Surge": false,
+    "Arcane Feedback": false,
+    "Arcane Mastery": false,
+    "Fire Mastery": false
+  },
+  "EquippedGear": [
+    {
+      "Name": "Spellbook",
+      "Will": 3
+    }
+  ]
+}

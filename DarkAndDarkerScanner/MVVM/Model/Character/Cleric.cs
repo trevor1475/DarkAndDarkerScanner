@@ -1,6 +1,8 @@
-﻿namespace DarkAndDarkerScannerBackend.Character
+﻿using System;
+
+namespace DarkAndDarkerScanner.Character
 {
-    public class Cleric : Character
+    public class Cleric : BaseCharacter
     {
         public Cleric()
         {

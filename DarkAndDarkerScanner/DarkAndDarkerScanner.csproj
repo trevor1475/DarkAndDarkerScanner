@@ -9,8 +9,11 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="MVVM\Model\" />
     <Folder Include="Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,12 @@
     <Compile Update="MVVM\View\EquipView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,8 @@
-﻿namespace DarkAndDarkerScannerBackend.Character
+﻿using System;
+
+namespace DarkAndDarkerScanner.Character
 {
-    public class Rogue : Character
+    public class Rogue : BaseCharacter
     {
         public Rogue()
         {

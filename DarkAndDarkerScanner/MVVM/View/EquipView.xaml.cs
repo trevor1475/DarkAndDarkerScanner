@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace DarkerScanner.MVVM.View
+namespace DarkAndDarkerScannerBackend.MVVM.View
 {
     /// <summary>
     /// Interaction logic for HomeView.xaml

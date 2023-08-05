@@ -1,9 +1,9 @@
-﻿using DarkerScanner.Character;
+﻿using DarkAndDarkerScannerBackend.Character;
 using Newtonsoft.Json;
 
-namespace DarkerScanner
+namespace DarkAndDarkerScannerBackend
 {
-    class DarkerScanner
+    class DarkAndDarkerScanner
     {
         Character.Character _character;
 
@@ -17,7 +17,7 @@ namespace DarkerScanner
 
             wiz.Equip(new Gear() { Name = "Badger Necklace", Will = 3 });
 
-            wiz.Compare(new Gear() { Name = "Badger Necklace", Will = 4 });
+            //wiz.Compare(new Gear() { Name = "Badger Necklace", Will = 4 });
         }
 
         public Config GetConfig()

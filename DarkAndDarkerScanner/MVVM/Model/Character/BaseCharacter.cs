@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DarkAndDarkerScannerBackend;
+using System;
 
-namespace DarkAndDarkerScannerBackend.Character
+namespace DarkAndDarkerScanner.Character
 {
-    public abstract class Character
+    public abstract class BaseCharacter
     {
         // TODO: variable adjust
         double HeadshotAccuracy = 0.8;
@@ -59,7 +60,7 @@ namespace DarkAndDarkerScannerBackend.Character
         public Gear Ring1 = new Gear();
         public Gear Ring2 = new Gear();
 
-        public Character()
+        public BaseCharacter()
         {
             
         }

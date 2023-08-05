@@ -1,9 +1,9 @@
-﻿<Application x:Class="DarkerScanner.App"
+﻿<Application x:Class="DarkAndDarkerScannerBackend.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:DarkerScanner"
-             xmlns:viewModel="clr-namespace:DarkerScanner.MVVM.ViewModel"
-             xmlns:view="clr-namespace:DarkerScanner.MVVM.View"
+             xmlns:local="clr-namespace:DarkAndDarkerScannerBackend"
+             xmlns:viewModel="clr-namespace:DarkAndDarkerScannerBackend.MVVM.ViewModel"
+             xmlns:view="clr-namespace:DarkAndDarkerScannerBackend.MVVM.View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>

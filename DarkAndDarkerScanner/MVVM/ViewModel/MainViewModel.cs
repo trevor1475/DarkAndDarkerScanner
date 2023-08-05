@@ -1,20 +1,26 @@
-﻿using DarkerScanner.Core;
+﻿using DarkAndDarkerScanner.MVVM.Model;
+using DarkAndDarkerScannerBackend.Core;
 
-namespace DarkerScanner.MVVM.ViewModel
+namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
 {
     public class MainViewModel : ObservableObject
     {
-        private object _currentView;
+        private ObservableObject _currentView;
+        private readonly DataStore _dataStore;
 
-        public object CurrentView
+        public ObservableObject CurrentView
         {
             get { return _currentView; }
-            set { _currentView = value; }
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged();
+            }
         }
 
         public ScanCompareViewModel scanCompareVm { get; set; }
         public EquipViewModel equipVm { get; set; }
-        public EquipViewModel settingsVm { get; set; }
+        public SettingsViewModel settingsVm { get; set; }
 
         public RelayCommand ScanCompareCommand { get; set; }
         public RelayCommand EquipCommand { get; set; }
@@ -22,14 +28,17 @@ namespace DarkerScanner.MVVM.ViewModel
 
         public MainViewModel()
         {
-            scanCompareVm = new ScanCompareViewModel();
-            equipVm = new EquipViewModel();
-            settingsVm = new EquipViewModel();
+            _dataStore = new DataStore();
+
+            scanCompareVm = new ScanCompareViewModel(_dataStore);
+            equipVm = new EquipViewModel(_dataStore);
+            settingsVm = new SettingsViewModel(_dataStore);
 
             CurrentView = scanCompareVm;
 
             ScanCompareCommand = new RelayCommand(o => { CurrentView = scanCompareVm; });
             EquipCommand = new RelayCommand(o => { CurrentView = equipVm; });
+            SettingsCommand = new RelayCommand(o => { CurrentView = settingsVm; });
         }
     }
 }

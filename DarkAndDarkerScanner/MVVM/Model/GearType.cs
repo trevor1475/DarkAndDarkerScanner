@@ -1,6 +1,8 @@
-﻿using DarkAndDarkerScannerBackend.Character;
+﻿using DarkAndDarkerScanner.Character;
+using System;
+using System.Collections.Generic;
 
-namespace DarkAndDarkerScannerBackend
+namespace DarkAndDarkerScanner
 {
     public class GearType
     {

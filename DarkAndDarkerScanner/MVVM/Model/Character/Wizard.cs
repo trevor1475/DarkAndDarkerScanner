@@ -1,6 +1,8 @@
-﻿namespace DarkAndDarkerScannerBackend.Character
+﻿using System.Collections.Generic;
+
+namespace DarkAndDarkerScanner.Character
 {
-    public class Wizard : Character
+    public class Wizard : BaseCharacter
     {
         public Dictionary<string, bool> Skills = new Dictionary<string, bool>()
         {

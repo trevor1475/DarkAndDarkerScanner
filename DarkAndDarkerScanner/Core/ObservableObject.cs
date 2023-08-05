@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace DarkerScanner.Core
+namespace DarkAndDarkerScannerBackend.Core
 {
     public class ObservableObject : INotifyPropertyChanged
     {
