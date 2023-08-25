@@ -51,17 +51,7 @@
                       Height="18"
                       Width="70"
                       VerticalAlignment="Center"
-                      SelectionChanged="cbChanged_RecalculateAll">
-                <ComboBoxItem Content="Weapon" IsSelected="True"/>
-                <ComboBoxItem Content="Offhand"/>
-                <ComboBoxItem Content="Helmet"/>
-                <ComboBoxItem Content="Chest"/>
-                <ComboBoxItem Content="Legs"/>
-                <ComboBoxItem Content="Gloves"/>
-                <ComboBoxItem Content="Boots"/>
-                <ComboBoxItem Content="Necklace"/>
-                <ComboBoxItem Content="Ring"/>
-            </ComboBox>
+                      SelectedItem="{Binding Path=GearSlot}"/>
 
             <TextBlock Text="Base Dmg"
                        FontSize="14"
@@ -73,11 +63,10 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="1"
                      Grid.Row="1"
                      VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding BaseDamage}"/>
 
             <TextBlock Text="Health"
                        FontSize="14"
@@ -89,10 +78,10 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="1"
                      Grid.Row="2"
-                     VerticalAlignment="Center"/>
+                     VerticalAlignment="Center"
+                     Text="{Binding Health}"/>
 
             <TextBlock Text="Strength"
                        FontSize="14"
@@ -104,11 +93,10 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="1"
                      Grid.Row="3"
                      VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding Strength}"/>
 
             <TextBlock Text="Agility"
                        FontSize="14"
@@ -120,11 +108,10 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="1"
                      Grid.Row="4"
                      VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateSpeeds"/>
+                     Text="{Binding Agility}"/>
 
             <TextBlock Text="Knowledge"
                        FontSize="14"
@@ -136,11 +123,10 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="1"
                      Grid.Row="5"
                      VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateSpeeds"/>
+                     Text="{Binding Knowledge}"/>
 
             <TextBlock Text="Will"
                        FontSize="14"
@@ -152,11 +138,10 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="1"
                      Grid.Row="6"
                      VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding Will}"/>
 
             <TextBlock Text="Move Speed"
                        FontSize="14"
@@ -168,10 +153,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="1"
                      Grid.Row="7" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateMoveSpeed"/>
+                     Text="{Binding MoveSpeed}"/>
 
             <GridSplitter Grid.Column="2" Grid.RowSpan="8"
                 HorizontalAlignment="Center"
@@ -192,9 +176,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
-                     Grid.Row="0" VerticalAlignment="Center"/>
+                     Grid.Row="0" VerticalAlignment="Center"
+                     Text="{Binding Armor}"/>
 
             <TextBlock Text="Phys Reduction"
                        FontSize="14"
@@ -206,7 +190,6 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
                      Grid.Row="1" VerticalAlignment="Center"/>
 
@@ -220,10 +203,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
                      Grid.Row="2" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding PhysicalDamage}"/>
 
             <TextBlock Text="True Phys Dmg"
                        FontSize="14"
@@ -235,10 +217,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
                      Grid.Row="3" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding TruePhysicalDamage}"/>
 
             <TextBlock Text="Phys Power"
                        FontSize="14"
@@ -250,10 +231,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
                      Grid.Row="4" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding PhysicalPower}"/>
 
             <TextBlock Text="Phys Power Bonus"
                        FontSize="14"
@@ -265,10 +245,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
                      Grid.Row="5" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding PhysicalPowerBonus}"/>
 
             <TextBlock Text="Armor Pen"
                        FontSize="14"
@@ -280,10 +259,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
                      Grid.Row="6" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding ArmorPenetration}"/>
 
             <TextBlock Text="Action Speed"
                        FontSize="14"
@@ -295,10 +273,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="4"
                      Grid.Row="7" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateActionSpeed"/>
+                     Text="{Binding ActionSpeed}"/>
 
             <GridSplitter Grid.Column="5" Grid.RowSpan="8"
                 HorizontalAlignment="Center"
@@ -319,7 +296,6 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="0" VerticalAlignment="Center"/>
 
@@ -333,7 +309,6 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="1" VerticalAlignment="Center"/>
 
@@ -347,10 +322,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="2" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding MagicDamage}"/>
 
             <TextBlock Text="True Magic Dmg"
                        FontSize="14"
@@ -362,10 +336,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="3" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding TrueMagicDamage}"/>
 
             <TextBlock Text="Magic Power"
                        FontSize="14"
@@ -377,10 +350,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="4" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding MagicPower}"/>
 
             <TextBlock Text="Magic Power Bonus"
                        FontSize="14"
@@ -392,10 +364,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="5" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding MagicPowerBonus}"/>
 
             <TextBlock Text="Magic Pen"
                        FontSize="14"
@@ -407,10 +378,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="6" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateDmg"/>
+                     Text="{Binding MagicPenetration}"/>
 
             <TextBlock Text="Cast Speed"
                        FontSize="14"
@@ -422,10 +392,9 @@
                      Width="50"
                      Height="18"
                      HorizontalAlignment="Right"
-                     Text="0"
                      Grid.Column="7"
                      Grid.Row="7" VerticalAlignment="Center"
-                     TextChanged="tbChanged_RecalculateCastSpeed"/>
+                     Text="{Binding CastSpeed}"/>
         </Grid>
 
         <Grid Margin="0,30,0,0">
@@ -449,7 +418,7 @@
                 <TextBlock Name="tb_ResultDps"
                     FontSize="18"
                     FontWeight="SemiBold"
-                    Text="-"
+                    Text="{Binding DpsMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     HorizontalAlignment="Center"
                     Foreground="Gray"/>
             </StackPanel>
@@ -462,7 +431,7 @@
                 <TextBlock Name="tb_ResultDmg"
                     FontSize="18"
                     FontWeight="SemiBold"
-                    Text="-"
+                    Text="{Binding DamageMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     HorizontalAlignment="Center"
                     Foreground="Gray"/>
             </StackPanel>
@@ -475,7 +444,7 @@
                 <TextBlock Name="tb_ResultActionSpeed"
                            FontSize="18"
                            FontWeight="SemiBold"
-                           Text="-"
+                           Text="{Binding ActionSpeedMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                            HorizontalAlignment="Center"
                            Foreground="Gray"/>
             </StackPanel>
@@ -488,7 +457,7 @@
                 <TextBlock Name="tb_ResultCastSpeed"
                            FontSize="18"
                            FontWeight="SemiBold"
-                           Text="-"
+                           Text="{Binding CastSpeedMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                            HorizontalAlignment="Center"
                            Foreground="Gray"/>
             </StackPanel>
@@ -501,7 +470,7 @@
                 <TextBlock Name="tb_ResultMoveSpeed"
                            FontSize="18"
                            FontWeight="SemiBold"
-                           Text="-"
+                           Text="{Binding MoveSpeedMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                            HorizontalAlignment="Center"
                            Foreground="Gray"/>
             </StackPanel>

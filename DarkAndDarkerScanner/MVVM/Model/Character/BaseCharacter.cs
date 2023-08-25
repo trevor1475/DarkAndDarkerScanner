@@ -1,7 +1,6 @@
-﻿using DarkAndDarkerScannerBackend;
-using System;
+﻿using System;
 
-namespace DarkAndDarkerScanner.Character
+namespace DarkAndDarkerScanner.MVVM.Model.Character
 {
     public abstract class BaseCharacter
     {
@@ -160,11 +159,11 @@ namespace DarkAndDarkerScanner.Character
         }
 
         // TODO: Better equip --- 2h issue
-        public Gear Equip(Gear newGear, int replacementSlot = 1)
+        public Gear Equip(Gear newGear, GearType.Slot gearSlot, int replacementSlot = 1)
         {
             Gear oldGear = null;
 
-            switch (GearType.StaticData[newGear.Name].GearSlot)
+            switch (gearSlot)
             {
                 case GearType.Slot.OneHandWeapon:
                     oldGear = Weapon;
@@ -225,7 +224,8 @@ namespace DarkAndDarkerScanner.Character
             if (oldGear != null)
                 RemoveStats(oldGear);
 
-            AddStats(newGear);
+            if (newGear != null)
+                AddStats(newGear);
 
             return oldGear;
         }
@@ -249,7 +249,7 @@ namespace DarkAndDarkerScanner.Character
 
         public double CalculateDps()
         {
-            return CalculateDamage() * (1 + ActionSpeed);
+            return CalculateDamage() * Math.Max(GetActionSpeed(), GetCastingSpeed());
         }
 
         private void AddStats(Gear gear)
@@ -264,7 +264,7 @@ namespace DarkAndDarkerScanner.Character
             PhysicalReduction += gear.PhysicalReduction;
             ResistRating += gear.ResistRating;
             MagicResist += gear.MagicResist;
-            MovementSpeed += gear.MovementSpeed;
+            MovementSpeed += gear.MoveSpeed;
             
             PhysicalDamage += gear.PhysicalDamage;
             TruePhysicalDamage += gear.TruePhysicalDamage;
@@ -273,12 +273,12 @@ namespace DarkAndDarkerScanner.Character
             ArmorPenetration += gear.ArmorPenetration;
             ActionSpeed += gear.ActionSpeed;
             
-            MagicalDamage += gear.MagicalDamage;
-            TrueMagicalDamage += gear.TrueMagicalDamage;
-            MagicalPower += gear.MagicalPower;
-            MagicalPowerBonus += gear.MagicalPowerBonus;
+            MagicalDamage += gear.MagicDamage;
+            TrueMagicalDamage += gear.TrueMagicDamage;
+            MagicalPower += gear.MagicPower;
+            MagicalPowerBonus += gear.MagicPowerBonus;
             MagicPenetration += gear.MagicPenetration;
-            CastingSpeed += gear.CastingSpeed;
+            CastingSpeed += gear.CastSpeed;
         }
 
         private void RemoveStats(Gear gear)
@@ -293,7 +293,7 @@ namespace DarkAndDarkerScanner.Character
             PhysicalReduction -= gear.PhysicalReduction;
             ResistRating -= gear.ResistRating;
             MagicResist -= gear.MagicResist;
-            MovementSpeed -= gear.MovementSpeed;
+            MovementSpeed -= gear.MoveSpeed;
 
             PhysicalDamage -= gear.PhysicalDamage;
             TruePhysicalDamage -= gear.TruePhysicalDamage;
@@ -302,12 +302,12 @@ namespace DarkAndDarkerScanner.Character
             ArmorPenetration -= gear.ArmorPenetration;
             ActionSpeed -= gear.ActionSpeed;
 
-            MagicalDamage -= gear.MagicalDamage;
-            TrueMagicalDamage -= gear.TrueMagicalDamage;
-            MagicalPower -= gear.MagicalPower;
-            MagicalPowerBonus -= gear.MagicalPowerBonus;
+            MagicalDamage -= gear.MagicDamage;
+            TrueMagicalDamage -= gear.TrueMagicDamage;
+            MagicalPower -= gear.MagicPower;
+            MagicalPowerBonus -= gear.MagicPowerBonus;
             MagicPenetration -= gear.MagicPenetration;
-            CastingSpeed -= gear.CastingSpeed;
+            CastingSpeed -= gear.CastSpeed;
         }
     }
 }

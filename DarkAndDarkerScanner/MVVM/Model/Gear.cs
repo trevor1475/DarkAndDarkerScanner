@@ -1,6 +1,6 @@
-﻿using static DarkAndDarkerScanner.GearType;
+﻿using static DarkAndDarkerScanner.MVVM.Model.GearType;
 
-namespace DarkAndDarkerScanner
+namespace DarkAndDarkerScanner.MVVM.Model
 {
     public class Gear
     {
@@ -17,7 +17,7 @@ namespace DarkAndDarkerScanner
         public double PhysicalReduction = 0.0;
         public int ResistRating = 0;
         public double MagicResist = 0.0;
-        public double MovementSpeed = 0.0;
+        public double MoveSpeed = 0.0;
 
         public int PhysicalDamage = 0;
         public int TruePhysicalDamage = 0;
@@ -26,12 +26,12 @@ namespace DarkAndDarkerScanner
         public double ArmorPenetration = 0.0;
         public double ActionSpeed = 0.0;
 
-        public int MagicalDamage = 0;
-        public int TrueMagicalDamage = 0;
-        public int MagicalPower = 0;
-        public double MagicalPowerBonus = 0.0;
+        public int MagicDamage = 0;
+        public int TrueMagicDamage = 0;
+        public int MagicPower = 0;
+        public double MagicPowerBonus = 0.0;
         public double MagicPenetration = 0.0;
-        public double CastingSpeed = 0.0;
+        public double CastSpeed = 0.0;
 
         public Gear()
         {

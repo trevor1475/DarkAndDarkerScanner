@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DarkAndDarkerScanner.Character
+namespace DarkAndDarkerScanner.MVVM.Model.Character
 {
     public class Ranger : BaseCharacter
     {

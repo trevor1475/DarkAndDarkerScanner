@@ -1,8 +1,8 @@
-﻿using DarkAndDarkerScanner.Character;
+﻿using DarkAndDarkerScanner.MVVM.Model.Character;
 using System;
 using System.Collections.Generic;
 
-namespace DarkAndDarkerScanner
+namespace DarkAndDarkerScanner.MVVM.Model
 {
     public class GearType
     {

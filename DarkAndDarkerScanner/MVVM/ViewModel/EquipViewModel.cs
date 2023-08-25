@@ -1,4 +1,5 @@
-﻿using DarkAndDarkerScannerBackend.Core;
+﻿using DarkAndDarkerScanner.MVVM.Stores;
+using DarkAndDarkerScannerBackend.Core;
 
 namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
 {
@@ -14,7 +15,7 @@ namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
         //necklace
         //2 rings
 
-        public EquipViewModel(DarkAndDarkerScanner.MVVM.Model.DataStore _dataStore)
+        public EquipViewModel(CharacterStore _characterStore)
         {
 
         }

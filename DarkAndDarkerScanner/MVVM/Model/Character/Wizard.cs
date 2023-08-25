@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DarkAndDarkerScanner.Character
+namespace DarkAndDarkerScanner.MVVM.Model.Character
 {
     public class Wizard : BaseCharacter
     {

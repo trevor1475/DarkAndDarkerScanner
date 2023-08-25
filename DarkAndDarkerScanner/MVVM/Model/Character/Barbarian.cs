@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DarkAndDarkerScanner.Character
+namespace DarkAndDarkerScanner.MVVM.Model.Character
 {
     public class Barbarian : BaseCharacter
     {
@@ -14,7 +14,7 @@ namespace DarkAndDarkerScanner.Character
 
         internal override double GetSkillMultiplier()
         {
-            throw new NotImplementedException();
+            return 1;
         }
     }
 }

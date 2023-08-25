@@ -7,6 +7,8 @@ namespace DarkAndDarkerScannerBackend.MVVM.View
     /// </summary>
     public partial class SettingsView : UserControl
     {
+        //cfg
+        // metric mode - increased vs more
         public SettingsView()
         {
             InitializeComponent();

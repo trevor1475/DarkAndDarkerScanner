@@ -1,7 +1,7 @@
-﻿using DarkAndDarkerScanner.MVVM.Model;
-using System;
+﻿using System;
 using System.Windows.Controls;
 using System.Windows.Media;
+using static DarkAndDarkerScanner.MVVM.Model.GearType;
 
 namespace DarkAndDarkerScannerBackend.MVVM.View
 {
@@ -13,52 +13,57 @@ namespace DarkAndDarkerScannerBackend.MVVM.View
         public ScanCompareView()
         {
             InitializeComponent();
+            cbGearSlot.ItemsSource = Enum.GetValues(typeof(Slot));
+            cbGearSlot.SelectedIndex = 0;
         }
 
         private void cbChanged_RecalculateAll(object sender, SelectionChangedEventArgs e)
         {
-            UpdateTextBox(tb_ResultDmg, new Random().NextDouble());
-            UpdateTextBox(tb_ResultActionSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultCastSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultMoveSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultDps, new Random().NextDouble());
+            UpdateTextBox(tb_ResultDmg);
+            UpdateTextBox(tb_ResultActionSpeed);
+            UpdateTextBox(tb_ResultCastSpeed);
+            UpdateTextBox(tb_ResultMoveSpeed);
+            UpdateTextBox(tb_ResultDps);
         }
 
         private void tbChanged_RecalculateDmg(object sender, TextChangedEventArgs e)
         {
-            UpdateTextBox(tb_ResultDmg, new Random().NextDouble());
-            UpdateTextBox(tb_ResultDps, new Random().NextDouble());
+            UpdateTextBox(tb_ResultDmg);
+            UpdateTextBox(tb_ResultDps);
         }
 
         private void tbChanged_RecalculateActionSpeed(object sender, TextChangedEventArgs e)
         {
-            UpdateTextBox(tb_ResultActionSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultDps, new Random().NextDouble());
+            UpdateTextBox(tb_ResultActionSpeed);
+            UpdateTextBox(tb_ResultDps);
         }
 
         private void tbChanged_RecalculateCastSpeed(object sender, TextChangedEventArgs e)
         {
-            UpdateTextBox(tb_ResultCastSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultDps, new Random().NextDouble());
+            UpdateTextBox(tb_ResultCastSpeed);
+            UpdateTextBox(tb_ResultDps);
         }
 
         private void tbChanged_RecalculateMoveSpeed(object sender, TextChangedEventArgs e)
         {
-            UpdateTextBox(tb_ResultMoveSpeed, new Random().NextDouble());
+            UpdateTextBox(tb_ResultMoveSpeed);
         }
 
         private void tbChanged_RecalculateSpeeds(object sender, TextChangedEventArgs e)
         {
-            UpdateTextBox(tb_ResultActionSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultCastSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultMoveSpeed, new Random().NextDouble());
-            UpdateTextBox(tb_ResultDps, new Random().NextDouble());
+            UpdateTextBox(tb_ResultActionSpeed);
+            UpdateTextBox(tb_ResultCastSpeed);
+            UpdateTextBox(tb_ResultMoveSpeed);
+            UpdateTextBox(tb_ResultDps);
         }
 
-        private void UpdateTextBox(TextBlock tb, double metric)
+        private void UpdateTextBox(TextBlock tb)
         {
             if (tb != null)
             {
+                double metric = 0;
+                Double.TryParse(tb.Text, out metric);
+
                 if (metric == 0)
                 {
                     tb.Text = $"-";

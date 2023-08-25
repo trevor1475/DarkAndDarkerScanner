@@ -1,4 +1,5 @@
-﻿using DarkAndDarkerScannerBackend.Core;
+﻿using DarkAndDarkerScanner.MVVM.Stores;
+using DarkAndDarkerScannerBackend.Core;
 
 namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
 {
@@ -13,7 +14,7 @@ namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
         // skills
         // perks
 
-        public SettingsViewModel(DarkAndDarkerScanner.MVVM.Model.DataStore _dataStore)
+        public SettingsViewModel(CharacterStore _dataStore)
         {
 
         }

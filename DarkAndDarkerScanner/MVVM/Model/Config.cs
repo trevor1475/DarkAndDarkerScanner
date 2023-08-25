@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DarkAndDarkerScanner
+namespace DarkAndDarkerScanner.MVVM.Model
 {
     internal class Config
     {
