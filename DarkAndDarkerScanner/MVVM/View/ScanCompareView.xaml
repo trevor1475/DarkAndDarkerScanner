@@ -418,9 +418,13 @@
                 <TextBlock Name="tb_ResultDps"
                     FontSize="18"
                     FontWeight="SemiBold"
-                    Text="{Binding DpsMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding DpsMetric,
+                                   Mode=TwoWay,
+                                   UpdateSourceTrigger=PropertyChanged,
+                                   NotifyOnTargetUpdated=True}"
                     HorizontalAlignment="Center"
-                    Foreground="Gray"/>
+                    Foreground="Gray"
+                    TargetUpdated="UpdateMetricColoring"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="1">
@@ -431,9 +435,13 @@
                 <TextBlock Name="tb_ResultDmg"
                     FontSize="18"
                     FontWeight="SemiBold"
-                    Text="{Binding DamageMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding DamageMetric,
+                                   Mode=TwoWay,
+                                   UpdateSourceTrigger=PropertyChanged,
+                                   NotifyOnTargetUpdated=True}"
                     HorizontalAlignment="Center"
-                    Foreground="Gray"/>
+                    Foreground="Gray"
+                    TargetUpdated="UpdateMetricColoring"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="2">
@@ -444,9 +452,13 @@
                 <TextBlock Name="tb_ResultActionSpeed"
                            FontSize="18"
                            FontWeight="SemiBold"
-                           Text="{Binding ActionSpeedMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           Text="{Binding ActionSpeedMetric,
+                                          Mode=TwoWay,
+                                          UpdateSourceTrigger=PropertyChanged,
+                                          NotifyOnTargetUpdated=True}"
                            HorizontalAlignment="Center"
-                           Foreground="Gray"/>
+                           Foreground="Gray"
+                           TargetUpdated="UpdateMetricColoring"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="3">
@@ -457,9 +469,13 @@
                 <TextBlock Name="tb_ResultCastSpeed"
                            FontSize="18"
                            FontWeight="SemiBold"
-                           Text="{Binding CastSpeedMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           Text="{Binding CastSpeedMetric,
+                                          Mode=TwoWay,
+                                          UpdateSourceTrigger=PropertyChanged,
+                                          NotifyOnTargetUpdated=True}"
                            HorizontalAlignment="Center"
-                           Foreground="Gray"/>
+                           Foreground="Gray"
+                           TargetUpdated="UpdateMetricColoring"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="4">
@@ -470,9 +486,13 @@
                 <TextBlock Name="tb_ResultMoveSpeed"
                            FontSize="18"
                            FontWeight="SemiBold"
-                           Text="{Binding MoveSpeedMetric, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           Text="{Binding MoveSpeedMetric,
+                                          Mode=TwoWay,
+                                          UpdateSourceTrigger=PropertyChanged,
+                                          NotifyOnTargetUpdated=True}"
                            HorizontalAlignment="Center"
-                           Foreground="Gray"/>
+                           Foreground="Gray"
+                           TargetUpdated="UpdateMetricColoring"/>
             </StackPanel>
         </Grid>
     </StackPanel>

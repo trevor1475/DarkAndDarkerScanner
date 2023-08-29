@@ -4,6 +4,8 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
 {
     public abstract class BaseCharacter
     {
+        private const int PUNCH_DAMAGE = 15;
+
         // TODO: variable adjust
         double HeadshotAccuracy = 0.8;
 
@@ -169,8 +171,17 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
                     oldGear = Weapon;
                     Weapon = newGear;
                     break;
+                case GearType.Slot.OffhandWeapon:
+                    //TODO
+                    //if (Weapon.IsTwoHanded)
+                    //{
+                        //RemoveStats(Weapon);
+                    //}
+                    oldGear = Offhand;
+                    Weapon = newGear;
+                    break;
                 case GearType.Slot.TwoHandWeapon:
-                    //TODO: fix
+                    oldGear = Weapon;
                     RemoveStats(Offhand);
                     Weapon = newGear;
                     break;
@@ -232,7 +243,7 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
 
         public double CalculateDamage()
         {
-            return IsMagicUser ? MagicalDamage : PhysicalDamage
+            return Math.Max(IsMagicUser ? MagicalDamage : PhysicalDamage, PUNCH_DAMAGE)
                 * (1 + (IsMagicUser ? MagicalPowerBonus : PhysicalPowerBonus))
                 * GetSkillMultiplier()
                 * GetHeadshotMultiplier()
