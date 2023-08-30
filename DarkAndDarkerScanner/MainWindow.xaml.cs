@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace DarkAndDarkerScannerBackend
+namespace DarkAndDarkerScanner
 {
     public partial class MainWindow : Window
     {

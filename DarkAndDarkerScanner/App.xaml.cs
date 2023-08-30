@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace DarkAndDarkerScannerBackend
+namespace DarkAndDarkerScanner
 {
     /// <summary>
     /// Interaction logic for App.xaml

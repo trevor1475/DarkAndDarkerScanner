@@ -161,11 +161,11 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
         }
 
         // TODO: Better equip --- 2h issue
-        public Gear Equip(Gear newGear, GearType.Slot gearSlot, int replacementSlot = 1)
+        public Gear Equip(Gear newGear, int replacementSlot = 1)
         {
-            Gear oldGear = null;
+            Gear? oldGear = null;
 
-            switch (gearSlot)
+            switch (newGear.GearSlot)
             {
                 case GearType.Slot.OneHandWeapon:
                     oldGear = Weapon;

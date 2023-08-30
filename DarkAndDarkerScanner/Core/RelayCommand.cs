@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace DarkAndDarkerScannerBackend.Core
+namespace DarkAndDarkerScanner.Core
 {
     public class RelayCommand : ICommand
     {

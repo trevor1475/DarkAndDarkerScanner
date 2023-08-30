@@ -2,9 +2,8 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using static DarkAndDarkerScanner.MVVM.Model.GearType;
 
-namespace DarkAndDarkerScannerBackend.MVVM.View
+namespace DarkAndDarkerScanner.MVVM.View
 {
     /// <summary>
     /// Interaction logic for HomeView.xaml
@@ -14,8 +13,6 @@ namespace DarkAndDarkerScannerBackend.MVVM.View
         public ScanCompareView()
         {
             InitializeComponent();
-            cbGearSlot.ItemsSource = Enum.GetValues(typeof(Slot));
-            cbGearSlot.SelectedIndex = 0;
         }
 
         private void UpdateMetricColoring(object sender, DataTransferEventArgs e)

@@ -1,23 +1,22 @@
 ﻿using DarkAndDarkerScanner.MVVM.Stores;
-using DarkAndDarkerScannerBackend.Core;
+using DarkAndDarkerScanner.Core;
 
-namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
+namespace DarkAndDarkerScanner.MVVM.ViewModel
 {
     public class EquipViewModel : ObservableObject
     {
-        //weapon
-        //offhand
-        //helmet
-        //chest
-        //legs
-        //boots
-        //gloves
-        //necklace
-        //2 rings
+        public RelayCommand ClearStatsCommand { get; }
 
-        public EquipViewModel(CharacterStore _characterStore)
+        public GearViewModel GearVm { get; }
+
+        private CharacterStore _characterStore;
+
+        public EquipViewModel(CharacterStore characterStore)
         {
+            _characterStore = characterStore;
+            GearVm = new GearViewModel();
 
+            ClearStatsCommand = new RelayCommand(o => { GearVm.ClearStats(); });
         }
     }
 }

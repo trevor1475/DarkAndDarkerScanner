@@ -1,7 +1,7 @@
 ﻿using DarkAndDarkerScanner.MVVM.Stores;
-using DarkAndDarkerScannerBackend.Core;
+using DarkAndDarkerScanner.Core;
 
-namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
+namespace DarkAndDarkerScanner.MVVM.ViewModel
 {
     public class SettingsViewModel : ObservableObject
     {

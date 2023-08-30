@@ -4,7 +4,7 @@ namespace DarkAndDarkerScanner.MVVM.Model
 {
     public class Gear
     {
-        public string Name = string.Empty;
+        public Slot GearSlot;
 
         public int AllStat = 0;
         public int Strength = 0;

@@ -1,8 +1,8 @@
 ﻿using DarkAndDarkerScanner.MVVM.Model.Character;
 using DarkAndDarkerScanner.MVVM.Stores;
-using DarkAndDarkerScannerBackend.Core;
+using DarkAndDarkerScanner.Core;
 
-namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
+namespace DarkAndDarkerScanner.MVVM.ViewModel
 {
     public class MainViewModel : ObservableObject
     {
@@ -28,8 +28,8 @@ namespace DarkAndDarkerScannerBackend.MVVM.ViewModel
 
         public MainViewModel()
         {
-            var wizard = new Barbarian();
-            var _characterStore = new CharacterStore(wizard);
+            var barb = new Barbarian();
+            var _characterStore = new CharacterStore(barb);
 
             scanCompareVm = new ScanCompareViewModel(_characterStore);
             equipVm = new EquipViewModel(_characterStore);
