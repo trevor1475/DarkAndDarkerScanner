@@ -114,5 +114,11 @@
                            TargetUpdated="UpdateMetricColoring"/>
             </StackPanel>
         </Grid>
+        
+        <Button
+                Content="Equip Gear"
+                Margin="50, 20, 50, 0"
+                Padding="0, 20"
+                Command="{Binding EquipGearCommand}"/>
     </StackPanel>
 </UserControl>

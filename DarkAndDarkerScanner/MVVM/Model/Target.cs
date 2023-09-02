@@ -1,6 +1,6 @@
 ﻿namespace DarkAndDarkerScanner.MVVM.Model
 {
-    internal class Target
+    public class Target
     {
         public int Health = 150;
         public double PhysicalReduction = 0.6;

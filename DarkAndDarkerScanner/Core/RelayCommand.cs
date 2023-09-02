@@ -5,7 +5,7 @@ namespace DarkAndDarkerScanner.Core
 {
     public class RelayCommand : ICommand
     {
-        private Action<object> _execute;
+        private Action _execute;
         private Func<object, bool> _canExecute;
 
         public event EventHandler? CanExecuteChanged
@@ -14,7 +14,7 @@ namespace DarkAndDarkerScanner.Core
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        public RelayCommand(Action execute, Func<object, bool> canExecute = null)
         {
             _execute = execute;
             _canExecute = canExecute;
@@ -27,7 +27,7 @@ namespace DarkAndDarkerScanner.Core
 
         public void Execute(object? parameter)
         {
-            _execute(parameter);
+            _execute();
         }
     }
 }

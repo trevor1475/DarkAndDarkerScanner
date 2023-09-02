@@ -18,7 +18,8 @@ namespace DarkAndDarkerScanner.MVVM.Model
             Gloves,
             Boots,
             Necklace,
-            Ring
+            Ring1,
+            Ring2
         }
 
         public Slot GearSlot { get; set; }
@@ -134,11 +135,12 @@ namespace DarkAndDarkerScanner.MVVM.Model
             // TODO: Add when togglable {"Rat Pendant",        new (Slot.Necklace, new[] {typeof(Barbarian), typeof(Cleric), typeof(Fighter), typeof(Ranger), typeof(Rogue), typeof(Wizard)})},
 
             // Rings
-            {"Ring of Courage",        new GearType(Slot.Ring, new[] {typeof(Barbarian), typeof(Fighter), typeof(Ranger), typeof(Rogue)})},
-            {"Ring of Quickness",      new GearType(Slot.Ring, new[] {typeof(Barbarian), typeof(Fighter), typeof(Ranger), typeof(Rogue)})},
-            {"Ring of Resolve",        new GearType(Slot.Ring, new[] {typeof(Cleric), typeof(Wizard)})},
-            // TODO: whats the name of knowledge ring
-            {"Ring of Knowledge",      new GearType(Slot.Ring, new[] {typeof(Cleric), typeof(Wizard)})},
+            {"Ring of Courage",        new GearType(Slot.Ring1, new[] {typeof(Barbarian), typeof(Fighter), typeof(Ranger), typeof(Rogue)})},
+            {"Ring of Quickness",      new GearType(Slot.Ring1, new[] {typeof(Barbarian), typeof(Fighter), typeof(Ranger), typeof(Rogue)})},
+            {"Ring of Resolve",        new GearType(Slot.Ring1, new[] {typeof(Cleric), typeof(Wizard)})},
+            {"Ring of Courage",        new GearType(Slot.Ring2, new[] {typeof(Barbarian), typeof(Fighter), typeof(Ranger), typeof(Rogue)})},
+            {"Ring of Quickness",      new GearType(Slot.Ring2, new[] {typeof(Barbarian), typeof(Fighter), typeof(Ranger), typeof(Rogue)})},
+            {"Ring of Resolve",        new GearType(Slot.Ring2, new[] {typeof(Cleric), typeof(Wizard)})},
             // TODO: Add when togglable {"Ring of Survival",        new[] {typeof(Barbarian), typeof(Cleric), typeof(Fighter), typeof(Ranger), typeof(Rogue), typeof(Wizard)}},
         };
     }

@@ -1,12 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using DarkAndDarkerScanner.MVVM.Model.Character;
+using System.Configuration;
 
 namespace DarkAndDarkerScanner.MVVM.Model
 {
-    internal class Config
+    public class Config : ConfigurationSection
     {
-        public string SelectedClass { get; set; }
-        public Dictionary<string, bool> Skills { get; set; }
-        public Dictionary<string, bool> Perks { get; set; }
-        public Gear[] EquippedGear { get; set; }
+        public string SelectedCharacter { get; set; }
+        public string SavedTarget { get; set; }
+        public string EnabledMetrics { get; set; }
+        public string SavedCharacters { get; set; }
+
+        public Config()
+        {
+
+        }
     }
 }

@@ -4,21 +4,25 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
 {
     public class Wizard : BaseCharacter
     {
-        public Dictionary<string, bool> Skills = new Dictionary<string, bool>()
+
+        private Dictionary<string, bool> _skills = new Dictionary<string, bool>()
         {
             {"Magic Missles", false},
             {"Fireball", false},
             {"Direct Hit", false},
             {"Splash Damage", false}
         };
+        public override Dictionary<string, bool> Skills { get { return _skills; } }
 
-        public Dictionary<string, bool> Perks = new Dictionary<string, bool>()
+        private Dictionary<string, bool> _perks = new Dictionary<string, bool>()
         {
             {"Mana Surge", false},
             {"Arcane Feedback", false},
             {"Arcane Mastery", false},
             {"Fire Mastery", false}
         };
+
+        public override Dictionary<string, bool> Perks { get { return _perks; } }
 
         public Wizard()
         {

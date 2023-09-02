@@ -2,6 +2,7 @@
 using DarkAndDarkerScanner.MVVM.Stores;
 using DarkAndDarkerScanner.Core;
 using System;
+using System.ComponentModel;
 
 namespace DarkAndDarkerScanner.MVVM.ViewModel
 {
@@ -80,15 +81,26 @@ namespace DarkAndDarkerScanner.MVVM.ViewModel
             }
         }
 
+        public RelayCommand EquipGearCommand { get; }
+
         public GearViewModel GearVm { get; set; }
 
         public ScanCompareViewModel(CharacterStore characterStore)
         {
             _characterStore = characterStore;
             GearVm = new GearViewModel();
+
+            EquipGearCommand = new RelayCommand(() => { _character.Equip(GearVm.CreateGear()); });
+
+            GearVm.PropertyChanged += new PropertyChangedEventHandler(OnGearVmPropertyChange);
         }
 
-        public void RecalculateAll()
+        ~ScanCompareViewModel()
+        {
+            GearVm.PropertyChanged -= new PropertyChangedEventHandler(OnGearVmPropertyChange);
+        }
+
+        private void OnGearVmPropertyChange(object? sender, PropertyChangedEventArgs e)
         {
             RecalculateDmg();
             RecalculateActionSpeed();

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using static DarkAndDarkerScanner.MVVM.Model.GearType;
 
 namespace DarkAndDarkerScanner.MVVM.Model.Character
 {
@@ -46,20 +49,15 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
         public int MagicalDamage = 0;
         public int TrueMagicalDamage = 0;
         public int MagicalPower = 0;
+
         public double MagicalPowerBonus = 0.0;
         public double MagicPenetration = 0.0;
         public double CastingSpeed = 0.0;
 
-        public Gear Weapon = new Gear();
-        public Gear Offhand = new Gear();
-        public Gear Helmet = new Gear();
-        public Gear Chest = new Gear();
-        public Gear Legs = new Gear();
-        public Gear Gloves = new Gear();
-        public Gear Boots = new Gear();
-        public Gear Necklace = new Gear();
-        public Gear Ring1 = new Gear();
-        public Gear Ring2 = new Gear();
+        public List<Gear> EquippedGear = new List<Gear>();
+
+        public abstract Dictionary<string, bool> Skills { get; }
+        public abstract Dictionary<string, bool> Perks { get; }
 
         public BaseCharacter()
         {
@@ -160,83 +158,32 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
             return false;
         }
 
+        public Gear? GetSlot(Slot gearSlot)
+        {
+            return EquippedGear.Where(x => x.GearSlot == gearSlot).FirstOrDefault();
+        }
+
         // TODO: Better equip --- 2h issue
         public Gear Equip(Gear newGear, int replacementSlot = 1)
         {
-            Gear? oldGear = null;
-
-            switch (newGear.GearSlot)
+            if (newGear == null)
             {
-                case GearType.Slot.OneHandWeapon:
-                    oldGear = Weapon;
-                    Weapon = newGear;
-                    break;
-                case GearType.Slot.OffhandWeapon:
-                    //TODO
-                    //if (Weapon.IsTwoHanded)
-                    //{
-                        //RemoveStats(Weapon);
-                    //}
-                    oldGear = Offhand;
-                    Weapon = newGear;
-                    break;
-                case GearType.Slot.TwoHandWeapon:
-                    oldGear = Weapon;
-                    RemoveStats(Offhand);
-                    Weapon = newGear;
-                    break;
-                case GearType.Slot.Helmet:
-                    oldGear = Helmet;
-                    Helmet = newGear;
-                    break;
-                case GearType.Slot.Chest:
-                    oldGear = Chest;
-                    Chest = newGear;
-                    break;
-                case GearType.Slot.Legs:
-                    oldGear = Legs;
-                    Legs = newGear;
-                    break;
-                case GearType.Slot.Gloves:
-                    oldGear = Gloves;
-                    Gloves = newGear;
-                    break;
-                case GearType.Slot.Boots:
-                    oldGear = Boots;
-                    Boots = newGear;
-                    break;
-                case GearType.Slot.Necklace:
-                    oldGear = Necklace;
-                    Necklace = newGear;
-                    break;
-                case GearType.Slot.Ring:
-                    if (replacementSlot == 1)
-                    {
-                        oldGear = Ring1;
-                        Ring1 = newGear;
-                    }
-                    else if (replacementSlot == 2)
-                    {
-                        oldGear = Ring2;
-                        Ring2 = newGear;
-                    }
-                    else
-                    {
-                        // TODO: error log
-                        return null;
-                    }
-
-                    break;
-
-                default:
-                    break;
+                return null;
             }
 
+            Gear? oldGear = GetSlot(newGear.GearSlot);
+
             if (oldGear != null)
+            {
                 RemoveStats(oldGear);
+                EquippedGear.Remove(oldGear);
+            }
 
             if (newGear != null)
+            {
                 AddStats(newGear);
+                EquippedGear.Add(newGear);
+            }
 
             return oldGear;
         }
@@ -271,13 +218,13 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
             Knowledge += (gear.Knowledge + gear.AllStat);
 
             Health += gear.Health;
-            Armor += gear.Armor;
+            Armor += gear.ArmorRating;
             PhysicalReduction += gear.PhysicalReduction;
-            ResistRating += gear.ResistRating;
-            MagicResist += gear.MagicResist;
-            MovementSpeed += gear.MoveSpeed;
+            ResistRating += gear.MagicResist;
+            MagicResist += gear.MagicReduction;
+            MovementSpeed += gear.MoveSpeedBonus;
             
-            PhysicalDamage += gear.PhysicalDamage;
+            PhysicalDamage += gear.BaseDamage + gear.WeaponDamage + gear.PhysicalDamage;
             TruePhysicalDamage += gear.TruePhysicalDamage;
             PhysicalPower += gear.PhysicalPower;
             PhysicalPowerBonus += gear.PhysicalPowerBonus;
@@ -300,11 +247,11 @@ namespace DarkAndDarkerScanner.MVVM.Model.Character
             Knowledge -= (gear.Knowledge + gear.AllStat);
 
             Health -= gear.Health;
-            Armor -= gear.Armor;
+            Armor -= gear.ArmorRating;
             PhysicalReduction -= gear.PhysicalReduction;
-            ResistRating -= gear.ResistRating;
-            MagicResist -= gear.MagicResist;
-            MovementSpeed -= gear.MoveSpeed;
+            ResistRating -= gear.MagicResist;
+            MagicResist -= gear.MagicReduction;
+            MovementSpeed -= gear.MoveSpeedBonus;
 
             PhysicalDamage -= gear.PhysicalDamage;
             TruePhysicalDamage -= gear.TruePhysicalDamage;
